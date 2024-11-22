@@ -4,6 +4,8 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
+
+        ## dynamic programming approach
         maxProfit = 0
         minBuy = prices[0]
 
