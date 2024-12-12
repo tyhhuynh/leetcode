@@ -4,13 +4,6 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        # new_str = ""
-
-        # for c in s:
-        #     if c.isalnum():
-        #         new_str += c.lower()
-        # return new_str == new_str[::-1]
-        
         l, r = 0, len(s) - 1
         while l < r:
             while l < r and not self.alphanum(s[l]):
