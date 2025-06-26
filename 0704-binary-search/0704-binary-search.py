@@ -7,8 +7,8 @@ class Solution:
             mid = (l + r) // 2
             if nums[mid] == target:
                 return mid
-            elif nums[mid] < target:
+            elif nums[mid] < target: # discard left half
                 l = mid + 1
-            else:
-                r = mid - 1
+            else:                    # discard right half
+                r = mid - 1 
         return -1
