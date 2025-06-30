@@ -4,14 +4,15 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        visited = set() # track unique elements
-        current = head # pointer for LL
-        
-        while current:
-            if current in visited:
+        one, two = head, head
+
+        while two and two.next: # ensures two can move two steps forward w/o reaching null
+            one = one.next
+            two = two.next.next
+
+            if one == two:
                 return True
-            visited.add(current)
-            current = current.next
-        return False 
+        return False # end of LL (acyclic)
