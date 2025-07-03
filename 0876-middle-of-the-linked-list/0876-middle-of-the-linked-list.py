@@ -11,6 +11,6 @@ class Solution:
             one = one.next
             two = two.next.next
 
-        return one
+        return one # points to correct middle node regardless of E/O length
         
 
