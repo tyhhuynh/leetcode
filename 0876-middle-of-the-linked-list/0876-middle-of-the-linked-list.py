@@ -11,10 +11,6 @@ class Solution:
             one = one.next
             two = two.next.next
 
-        if two == None or two.next == None:
-            return one
-        
-        # if two.next == None:
-        #     return one
+        return one
         
 
