@@ -1,18 +1,29 @@
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
-        a = [] # s
-        b = [] # t
-
-        for c in s:
-            if c == "#":
-                a.pop() if a else None
-            else:
-                a.append(c)
+        i, j = len(s) - 1, len(t) - 1 # traverse in reverse
         
-        for c in t:
-            if c == "#":
-                b.pop() if b else None
-            else:
-                b.append(c)
+        # helper fn:
+        def backspace_char(s: str, index: int) -> int:
+            skip = 0 # #-counter
+            while index >= 0:
+                if s[index] == "#":
+                    skip += 1
+                elif skip > 0:
+                    skip -= 1
+                else:
+                    break
+                index -= 1
+            return index
+        
+        while i >= 0 or j >= 0:
+            i = backspace_char(s, i)
+            j = backspace_char(t, j)
 
-        return a == b
+            if i < 0 and j < 0:
+                return True
+            if i < 0 or j < 0 or s[i] != t[j]:
+                return False
+
+            i -= 1
+            j -= 1
+        return True
