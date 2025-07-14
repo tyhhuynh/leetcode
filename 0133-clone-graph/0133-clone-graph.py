@@ -21,7 +21,7 @@ class Solution(object):
             copy = Node(node.val) # creates new node object w/ same value as og node
             oldToNew[node] = copy # stores the mapping of og node to its clone to avoid revisiting & cycles
 
-            # appends neighbors onto copy node
+            # recursively clones and addes all neighbors
             for neighbor in node.neighbors:
                 copy.neighbors.append(clone(neighbor))
             return copy
