@@ -4,12 +4,14 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        # base case:
+        
         a, b = 0, 1
+        
+        # base case:
         if n <= 0:
-            return a
-
+            return a # returns 0 if n = -# too
+            
         # recursive case:
-        for i in range(2, n + 1):
+        for i in range(n-1): # index i does not matter, # of iterations does
             a, b = b, a + b
         return b
