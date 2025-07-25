@@ -11,7 +11,7 @@ class Solution(object):
         if len(nums) == 0:
             return [[]]
         
-        perms = self.permute(nums[1:])
+        perms = self.permute(nums[1:]) #  generates [ [2,3], [3,2] ]
         result = []
 
         for p in perms:
