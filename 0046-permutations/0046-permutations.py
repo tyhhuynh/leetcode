@@ -5,18 +5,16 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         
-        # recursive solution
-
-        # base case:
-        if len(nums) == 0:
-            return [[]]
+        # iterative solution
         
-        perms = self.permute(nums[1:]) # generates [ [2,3], [3,2] ]
-        result = []
+        perms = [[]] # base case
 
-        for p in perms:
-            for i in range(len(p) + 1):
-                p_copy = list(p) # .copy() for Py3
-                p_copy.insert(i, nums[0]) # insert value at all possible indices of p
-                result.append(p_copy)
-        return result
+        for n in nums:
+            new_perms = []
+            for p in perms:
+                for i in range(len(p) + 1):
+                    p_copy = list(p) # .copy() for Py3
+                    p_copy.insert(i, n) # insert value at all possible indicies of p
+                    new_perms.append(p_copy)
+            perms = new_perms
+        return perms
