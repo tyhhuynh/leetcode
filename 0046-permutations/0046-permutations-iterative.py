@@ -14,7 +14,7 @@ class Solution(object):
             for p in perms:
                 for i in range(len(p) + 1):
                     p_copy = list(p) # .copy() for Py3
-                    p_copy.insert(i, n) # insert value at all possible indicies of p
+                    p_copy.insert(i, n) # insert value at all possible indices of p
                     new_perms.append(p_copy)
             perms = new_perms
         return perms
