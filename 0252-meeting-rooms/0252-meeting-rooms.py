@@ -16,7 +16,7 @@ class Solution:
         # lambda fn: takes in i and outputs i.start value
         # sort(key = lambda fn): sorts i.start value appropriately
 
-        for i in range(1, len(intervals):
+        for i in range(1, len(intervals)):
             i1 = intervals[i - 1] # index starts at 1 instead of 0
             i2 = intervals[i]
 
