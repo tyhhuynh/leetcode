@@ -8,10 +8,10 @@ class Solution(object):
         a, b = 0, 1
         
         # base case:
-        if n <= 0:
-            return a # returns 0 if n = -# too
+        if n <= 0: # returns 0 if n is 0 || negative
+            return a
             
-        # recursive case:
-        for i in range(n-1): # index i does not matter, # of iterations does
+        # iterative case: compute fib value bottom-up
+        for i in range(n - 1): # index i does not matter, # of iterations does
             a, b = b, a + b
         return b
