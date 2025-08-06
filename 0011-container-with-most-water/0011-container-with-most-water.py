@@ -4,7 +4,6 @@ class Solution(object):
         :type height: List[int]
         :rtype: int
         """
-        
         result = 0
         l, r = 0, len(height) - 1
 
@@ -16,6 +15,8 @@ class Solution(object):
             elif height[l] > height[r]:
                 r -= 1
             else: # height[l] == height[r]
+
+                # finds the next greatest height (although it does not matter)
                 if height[l + 1] > height[r - 1]:
                     l += 1
                 else:
