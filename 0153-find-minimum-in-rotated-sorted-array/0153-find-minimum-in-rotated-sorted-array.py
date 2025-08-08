@@ -8,7 +8,7 @@ class Solution(object):
         result = nums[0]
 
         while l <= r:
-            if nums[l] < nums[r]:
+            if nums[l] < nums[r]: # current portion of array is sorted
                 result = min(result, nums[l])
                 break
 
@@ -17,7 +17,7 @@ class Solution(object):
             
             if nums[m] >= nums[l]:
                 l = m + 1
-            else:
+            else: # nums[m] < nums[l]
                 r = m - 1
 
         return result
