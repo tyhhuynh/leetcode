@@ -3,12 +3,19 @@
 
 class Solution:
     def firstBadVersion(self, n: int) -> int:
+
+        # # brute force: for-loop thru n: O(n)
+        # for i in range(1, n + 1):
+        #     if isBadVersion(i):
+        #         return i
+
+        # binary search: O(log n)
         l, r = 1, n
 
         while l < r:
-            mid = (l + r) // 2
-            if isBadVersion(mid):
-                r = mid # reduces r-side except mid b/c mid could be 1st bad version
+            m = (l + r) // 2
+            if isBadVersion(m):
+                r = m # m COULD be 1st bad version
             else:
-                l = mid + 1 # reduces l-side including mid b/c it's all good version, so check next iteration
-        return l # can return r bc they are equal
+                l = m + 1
+        return l # or r bc l == r
